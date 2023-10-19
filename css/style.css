@@ -4,19 +4,19 @@
     background-repeat: no-repeat;
     /*background-position-y: 16%;
     padding-top: 100px;*/
-    color: white;
     border-top: 5px solid white;
 }
 
 #section-title{
     padding-top: 40px;
+    color: white;
 }
 
 .section .container{
     padding-top: 100px;
 }
 
-/* Navegacion */
+/* NAVEGACION */
 
 .navbar{
     background-color: #780000;
@@ -26,28 +26,95 @@
     z-index: 1;
 }
 
-#navbarTogglerDemo01{
+.navbar-toggler{
+    display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
-.nav-link{
+.nav-link-style{
     color: white;
 }
 
-.nav-link:hover{
+.nav-link-style:hover{
     color: white;
     background-color: #ab4b4b;
 }
 
 .btn-pedido{
+    display: block;
+    text-decoration: none;
     background-color: #101A24;
     border-radius: 10px;
+    width: max-content;
 }
 
-/* Carrusel */
+.item {
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+    min-width: 10%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.dropdown {
+  overflow: hidden;
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  left: 0;
+  top: 62px;
+}
+.dropdown > div {
+  transform: translate(0, -100%);
+  transition: all 0.5s 0.1s;
+  position: relative;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #ab4b4b;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: #254fb5;
+}
+
+nav .item:hover > .dropdown > div {
+  transform: translate(0);
+}
+
+nav .item:nth-child(1):hover ~ .underline {
+  transform: translate(0, 0);
+}
+
+nav .item:nth-child(2):hover ~ .underline {
+  transform: translate(100%, 0);
+}
+
+nav .item:nth-child(3):hover ~ .underline {
+  transform: translate(200%, 0);
+}
+
+nav .item:nth-child(4):hover ~ .underline {
+  transform: translate(300%, 0);
+}
+
+/* CARRUSEL */
 
 .carousel{
-    margin-top: 108px;
+    margin-top: 89px;
 }
 
 .carousel-control{
@@ -59,7 +126,7 @@
     margin: 0 50px;
 }
 
-/* Productos */
+/* PRODUCTOS */
 
 .img-productos{
     width: 100%;
@@ -95,7 +162,7 @@
     border-radius: 10px;
 }
 
-/* Nosotros */
+/* NOSOTROS */
 
 .nosotros-p{
     font-size: 1.4rem;
@@ -105,15 +172,110 @@
     border-radius: 20px;
 }
 
+/* UBICACION */
+
+.div-ubicacio-info{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1.7rem;
+}
+
+.ubicacion-iframe{
+    width: 500px; 
+    height: 400px;
+}
+
+/* CONTACTO */
+.contacto-form{
+    width: 45%;
+    margin: 0 auto;
+    background-color: #F9F7F7;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 2rem;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.contacto-form div{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.contacto-form input{
+    border: none;
+    border-bottom: 1px solid #780000;
+    background-color: #F9F7F7;
+    outline: none;
+}
+
+.form-floating{
+    z-index: 0;
+}
+
+.form-floating input:hover{
+    background-color: #F9F7F7;
+}
+
+.form-control, .form-control:hover{
+    background-color: #F9F7F7;
+}
+
+.btn-danger{
+    background-color: #780000;
+}
+
+label{
+    color: gray;
+}
+
+
+/* FOOTER */
+
+.footer-img{
+    width:200px;
+}
+
+.footer-h3{
+    color: #780000;
+}
+
+.footer-bi{
+    font-size: 2rem;
+    color: black;
+}
+
 @media(max-width: 767px){
     .navbar-brand{
         display: none;
     }
-    
+    .carrusel-img{
+        height: 550px;
+    }
+    .div-ubicacio-info{
+        font-size: 1rem;
+        align-items: center;
+    }
+    .ubicacion-iframe{
+        width: auto;
+        height: 310px;
+    }
 }
 
 @media(max-width: 768px){
-    
+    .navbar-nav{
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .nav-item{
+
+        text-align: center;
+    }
     .carousel{
         margin-top: 56px;
     }
@@ -127,6 +289,43 @@
     .nosotros-p{
         font-size: 0.9rem;
     }
+    .contacto-form{
+        width: 75%;
+        font-size: 0.7rem;
+        gap: 0;
+    }    
+    .conacto-span{
+        font-size: 0.9rem !important;
+    }
+    .contacto-form div{
+        padding-bottom: 0;
+    }
+    .contacto-img{
+        width: 70px;
+    }
+    .footer-div{
+        text-align: center;
+        gap: 2rem;
+        flex-direction: column;
+    }
+    .footer-div-p{
+        justify-content: space-evenly !important;
+    }
+    .footer-img{
+        width:100px;
+    }
+    .footer-h3{
+        font-size: 0.7rem;
+    }
+    .footer-bi{
+        font-size: 1rem;
+    }
+    .footer-div-p{
+        font-size: 0.7rem;
+    }
+    .footer-copyright{
+        font-size: 0.8rem;
+    }
 }
 
 @media(max-width:600px){
@@ -134,22 +333,48 @@
         padding-top: 5px;
         font-size: 1.4rem;
     }
+    .carrusel-img{
+        height: 330px;
+    }
+    .section .container{
+        padding-top: 30px;
+    }
+    .carousel-control{
+        top: 150px;
+        display: none;
+    }
+}
+
+@media (max-width:992px) and (min-width:768px){
+    .navbar-expand-md{
+        justify-content: space-evenly;
+    }
+    .contacto-form{
+        width: 60%;
+    }
+    .footer-img{
+        width:150px;
+    }
+    .footer-h3{
+        font-size: 1rem;
+    }
+    .footer-bi{
+        font-size: 1rem;
+    }
+    .footer-div-p{
+        font-size: 0.7rem;
+    }
+
 }
 
 @media (max-width:1199px) and (min-width:768px) {
-    .navbar{
-        justify-content: space-evenly;
-    }
     .navbar-container{
         width: 100%;
         margin: 0;
     }
     
     .navbar-img{
-        width: 180px;
-    }
-    .btn-pedido{
-        width: 132px;
+        width: 140px;
     }
     #section-title{
         padding-top: 20px;
@@ -160,10 +385,18 @@
     .nosotros-p{
         font-size: 1rem;
     }
+
+    .div-ubicacio-info{
+        font-size: 1.5rem;
+    }
+    .ubicacion-iframe{
+        max-width: fit-content;
+        height: 250px;
+    }
 }
 
 @media (min-width: 1200px){
-    .nav-link{
+    .nav-link-style{
         font-size: 1.5rem;
     }
     .carousel{
@@ -172,10 +405,9 @@
     .nosotros-p{
         font-size: 1.2rem;
     }
+    h2{
+        font-size: 40px;
+    }
 }
 
-/* @media(max-width:1200px){
-    h2{
-        font-size: 3rem;
-    } 
-} */
+
